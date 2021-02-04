@@ -7,7 +7,7 @@
 
     <groupId>org.novasearch</groupId>
     <artifactId>lucene-relevance</artifactId>
-    <version>7.6.0.1</version>
+    <version>7.6.0.1.${revision}</version>
     <packaging>jar</packaging>
 
     <name>Lucene Relevance</name>
@@ -36,6 +36,19 @@
         </license>
     </licenses>
 
+    <distributionManagement>
+        <repository>
+            <id>mchv-release-distribution</id>
+            <name>MCHV Release Apache Maven Packages Distribution</name>
+            <url>https://mvn.mchv.eu/repository/mchv</url>
+        </repository>
+        <snapshotRepository>
+            <id>mchv-snapshot-distribution</id>
+            <name>MCHV Snapshot Apache Maven Packages Distribution</name>
+            <url>https://mvn.mchv.eu/repository/mchv-snapshot</url>
+        </snapshotRepository>
+    </distributionManagement>
+
     <scm>
         <connection>scm:git@github.com:flaviomartins/lucene-relevance.git</connection>
         <developerConnection>scm:git@github.com:flaviomartins/lucene-relevance.git</developerConnection>
@@ -50,6 +63,7 @@
     <properties>
         <lucene.version>7.6.0</lucene.version>
         <maven.compiler.target>1.8</maven.compiler.target>
+        <revision>0-SNAPSHOT</revision>
     </properties>
 
     <dependencies>
