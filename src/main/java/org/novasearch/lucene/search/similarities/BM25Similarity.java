@@ -68,7 +68,7 @@ public class BM25Similarity extends Similarity {
     if (Float.isFinite(k1) == false || k1 < 0) {
       throw new IllegalArgumentException("illegal k1 value: " + k1 + ", must be a non-negative finite value");
     }
-    if (Float.isNaN(b) || b < 0 || b > 1) {
+    if (Float.isNaN(b) || b > 1) {
       throw new IllegalArgumentException("illegal b value: " + b + ", must be between 0 and 1");
     }
     if (Float.isNaN(d) || d < 0 || d > 1.5) {
@@ -91,7 +91,7 @@ public class BM25Similarity extends Similarity {
     if (Float.isFinite(k1) == false || k1 < 0) {
       throw new IllegalArgumentException("illegal k1 value: " + k1 + ", must be a non-negative finite value");
     }
-    if (Float.isNaN(b) || b < 0 || b > 1) {
+    if (Float.isNaN(b) || b > 1) {
       throw new IllegalArgumentException("illegal b value: " + b + ", must be between 0 and 1");
     }
     this.k1 = k1;
