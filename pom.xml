@@ -12,7 +12,7 @@
 
     <name>Lucene Relevance</name>
     <description>
-        Contains implementations of good similarities for Lucene/Solr.
+        Contains implementations of good similarities for Lucene.
     </description>
     <url>https://github.com/flaviomartins/lucene-relevance</url>
 
@@ -70,11 +70,6 @@
         <dependency>
             <groupId>org.apache.lucene</groupId>
             <artifactId>lucene-core</artifactId>
-            <version>${lucene.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.solr</groupId>
-            <artifactId>solr-core</artifactId>
             <version>${lucene.version}</version>
         </dependency>
     </dependencies>
