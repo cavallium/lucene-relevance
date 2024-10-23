@@ -61,8 +61,8 @@
     </issueManagement>
 
     <properties>
-        <lucene.version>9.5.0</lucene.version>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <lucene.version>10.0.0</lucene.version>
+        <maven.compiler.release>21</maven.compiler.release>
         <revision>0-SNAPSHOT</revision>
     </properties>
 
@@ -111,10 +111,9 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
+                <version>3.13.0</version>
                 <configuration>
-                    <source>${maven.compiler.target}</source>
-                    <target>${maven.compiler.target}</target>
+                    <release>${maven.compiler.release}</release>
                     <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
@@ -143,39 +142,6 @@
                         </fileset>
                     </filesets>
                 </configuration>
-            </plugin>
-            <plugin>
-                <groupId>de.thetaphi</groupId>
-                <artifactId>forbiddenapis</artifactId>
-                <version>3.4</version>
-                <configuration>
-                    <!-- disallow undocumented classes like sun.misc.Unsafe: -->
-                    <internalRuntimeForbidden>true</internalRuntimeForbidden>
-                    <!--
-                      if the used Java version is too new,
-                      don't fail, just do nothing:
-                    -->
-                    <failOnUnsupportedJava>false</failOnUnsupportedJava>
-                    <bundledSignatures>
-                        <!--
-                          This will automatically choose the right
-                          signatures based on 'maven.compiler.target':
-                        -->
-                        <bundledSignature>jdk-unsafe</bundledSignature>
-                        <bundledSignature>jdk-deprecated</bundledSignature>
-                        <bundledSignature>jdk-non-portable</bundledSignature>
-                        <bundledSignature>jdk-reflection</bundledSignature>
-                        <bundledSignature>jdk-system-out</bundledSignature>
-                    </bundledSignatures>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>check</goal>
-                            <goal>testCheck</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>

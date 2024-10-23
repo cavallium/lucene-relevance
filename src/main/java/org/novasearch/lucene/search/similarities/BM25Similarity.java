@@ -160,14 +160,6 @@ public class BM25Similarity extends Similarity {
   public void setDiscountOverlaps(boolean v) {
     discountOverlaps = v;
   }
-
-  /**
-   * Returns true if overlap tokens are discounted from the document's length. 
-   * @see #setDiscountOverlaps 
-   */
-  public boolean getDiscountOverlaps() {
-    return discountOverlaps;
-  }
   
   /** Cache of decoded bytes. */
   private static final float[] LENGTH_TABLE = new float[256];
